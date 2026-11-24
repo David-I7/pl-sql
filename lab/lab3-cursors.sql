@@ -501,8 +501,8 @@ DECLARE
     CURSOR c_regiune IS 
         SELECT region_name,
         CURSOR (SELECT country_name
-        FROM countries c
-        WHERE c.region_id = r.region_id)
+                FROM countries c
+                WHERE c.region_id = r.region_id)
         FROM regions r;
     v_regiune regions.region_name%TYPE;
     v_tara SYS.REFCURSOR;
